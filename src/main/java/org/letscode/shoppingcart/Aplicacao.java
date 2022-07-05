@@ -8,7 +8,7 @@ import org.letscode.shoppingcart.repositories.ProdutoRepository;
 public class Aplicacao {
     public static void main(String[] args) {
         EntityManager em = EntityManager.getInstance();
-        ProdutoRepository repository = new ProdutoRepository();
+        ProdutoRepository repository = ProdutoRepository.getInstance();
         Produto produto = new Produto("Produto 1");
         Produto produto2 = new Produto("Produto 2");
         Cliente cliente = new Cliente("999.999.999-99");

@@ -6,7 +6,7 @@ import org.letscode.shoppingcart.model.Produto;
 public class ProdutoRepository extends Repository<Produto, Long> {
     private static ProdutoRepository instance;
 
-    public ProdutoRepository() {
+    private ProdutoRepository() {
         super(Produto.class);
     }
 
