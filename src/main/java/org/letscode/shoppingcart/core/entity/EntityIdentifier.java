@@ -4,6 +4,10 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * Classe que representa uma identificador de entidade.
+ * @param <T> tipo de identificador
+ */
 public class EntityIdentifier<ID extends Object> {
     private String value;
 
