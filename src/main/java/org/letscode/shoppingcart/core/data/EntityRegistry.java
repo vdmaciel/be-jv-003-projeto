@@ -24,7 +24,7 @@ public class EntityRegistry {
      */
     @SuppressWarnings("unchecked")
     public <ID extends Object, T extends Entity<ID>> Store<T, ID> getStore(Class<T> clazz) {
-        // obtem a classe ou a superclasse que contém o campo annotado com @PK
+        // obtem a classe ou a superclasse que contém o campo anotado com @PK
         Class<T> rootAncestor = (Class<T>) PKUtils.getClassThatContainsFieldAnnotatedWithPK(clazz);
 
         String className = rootAncestor.getName();

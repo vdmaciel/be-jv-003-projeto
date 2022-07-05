@@ -67,7 +67,7 @@ public class Store<T extends Entity<ID>, ID extends Object> {
     }
 
     /**
-     * Instancia um identificador de entidade para o objeto se este ainda o possuir
+     * Instancia um identificador de entidade para o objeto se este ainda não o possuir
      * o identificador é instanciado utilizand o valor armazenado no campo anotado com @PK
      * @param entity objeto a ser salvo
      */

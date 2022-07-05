@@ -5,11 +5,10 @@ import java.util.List;
 import org.letscode.shoppingcart.core.entity.Entity;
 
 public abstract class Repository<T extends Entity<ID>, ID extends Object> {
-    protected EntityManager em;
+    protected EntityManager em = EntityManager.getInstance();
     protected Class<T> clazz;
 
-    public Repository(EntityManager em, Class<T> clazz) {
-        this.em = em;
+    public Repository(Class<T> clazz) {
         this.clazz = clazz;
     }
 
