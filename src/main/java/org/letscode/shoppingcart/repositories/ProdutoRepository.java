@@ -1,12 +1,19 @@
 package org.letscode.shoppingcart.repositories;
 
-import org.letscode.shoppingcart.core.data.EntityManager;
 import org.letscode.shoppingcart.core.data.Repository;
 import org.letscode.shoppingcart.model.Produto;
 
 public class ProdutoRepository extends Repository<Produto, Long> {
+    private static ProdutoRepository instance;
 
-    public ProdutoRepository(EntityManager em) {
-        super(em, Produto.class);
+    public ProdutoRepository() {
+        super(Produto.class);
+    }
+
+    public static ProdutoRepository getInstance() {
+        if(instance == null) {
+            instance = new ProdutoRepository();
+        }
+        return instance;
     }
 }

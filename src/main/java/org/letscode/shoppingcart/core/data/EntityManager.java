@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.letscode.shoppingcart.core.contracts.IPersistor;
 import org.letscode.shoppingcart.core.entity.Entity;
+import org.letscode.shoppingcart.core.persistence.InMemoryPersistor;
 
 /**
  * Classe responsável gerenciar as entidades do sistema.
@@ -11,11 +12,22 @@ import org.letscode.shoppingcart.core.entity.Entity;
  */
 public class EntityManager {
     private EntityRegistry registry;
-    private IPersistor persistor;
+    private IPersistor persistor = new InMemoryPersistor();
+    private static EntityManager instance;
 
-    public EntityManager(IPersistor persistor) {
-        this.persistor = persistor;
+    private EntityManager() {
         this.registry = this.persistor.retrieve();
+    }
+
+    public static EntityManager getInstance() {
+        if(instance == null) {
+            instance = new EntityManager();
+        }
+        return instance;
+    }
+
+    public void setPersistor(IPersistor persistor) {
+        this.persistor = persistor;
     }
 
     @SuppressWarnings("unchecked")
