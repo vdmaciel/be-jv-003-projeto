@@ -31,18 +31,18 @@ public class EntityManager {
     }
 
     @SuppressWarnings("unchecked")
-    public <T extends Entity<ID>, ID extends Object> T get(Object id, Class<? extends Entity<ID>> clazz) {
+    public <T extends Entity<ID>, ID> T get(Object id, Class<? extends Entity<ID>> clazz) {
         return (T) registry.getStore(clazz).get((ID) id);
     }
 
     @SuppressWarnings("unchecked")
-    public <T extends Entity<ID>, ID extends Object> void save(T entity) {
+    public <T extends Entity<ID>, ID> void save(T entity) {
         this.registry.getStore(entity.getClass()).put(entity);
         this.persistor.persist(this.registry);
     }
 
     @SuppressWarnings("unchecked")
-    public <T extends Entity<ID>, ID extends Object> void delete(T entity) {
+    public <T extends Entity<ID>, ID> void delete(T entity) {
         this.registry.getStore(entity.getClass()).remove(entity);
         this.persistor.persist(this.registry);
     }

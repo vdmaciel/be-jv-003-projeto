@@ -1,15 +1,10 @@
-package org.letscode.shoppingcart.model;
+package org.letscode.shoppingcart.domain;
 
 import org.letscode.shoppingcart.core.annotations.PK;
-import org.letscode.shoppingcart.core.entity.Entity;
 
-public class Cliente extends Entity<String> {
+public class PessoaFisica extends Cliente {
     @PK
     private String cpf;
-
-    public Cliente(String cpf) {
-        this.cpf = cpf;
-    }
 
     public String getCpf() {
         return cpf;
@@ -19,8 +14,12 @@ public class Cliente extends Entity<String> {
         this.cpf = cpf;
     }
 
+    public PessoaFisica(String cpf) {
+        this.cpf = cpf;
+    }
+
     @Override
     public String toString() {
-        return "Cliente [cpf=" + cpf + "]";
+        return "PessoaFisica [cpf=" + cpf + "]";
     }
 }

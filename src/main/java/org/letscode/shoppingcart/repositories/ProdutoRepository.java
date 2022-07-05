@@ -1,7 +1,7 @@
 package org.letscode.shoppingcart.repositories;
 
 import org.letscode.shoppingcart.core.data.Repository;
-import org.letscode.shoppingcart.model.Produto;
+import org.letscode.shoppingcart.domain.Produto;
 
 public class ProdutoRepository extends Repository<Produto, Long> {
     private static ProdutoRepository instance;
