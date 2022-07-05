@@ -5,6 +5,10 @@ import java.util.List;
 import org.letscode.shoppingcart.core.contracts.IPersistor;
 import org.letscode.shoppingcart.core.entity.Entity;
 
+/**
+ * Classe responsável gerenciar as entidades do sistema.
+ *
+ */
 public class EntityManager {
     private EntityRegistry registry;
     private IPersistor persistor;
