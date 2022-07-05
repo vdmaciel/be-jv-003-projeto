@@ -12,7 +12,7 @@ import org.letscode.shoppingcart.core.entity.Entity;
 import org.letscode.shoppingcart.core.entity.EntityIdentifier;
 
 /**
- * Classe responsável por armazenar em memória os dados de uma única entidade.
+ * Classe responsável por realizar o mapeamento entre chaves primarias e instancias de uma entidade específica
  *
  * @param <T> tipo da entidade
  * @param <ID> tipo do identificador da entidade

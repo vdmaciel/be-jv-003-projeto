@@ -7,7 +7,7 @@ import org.letscode.shoppingcart.core.entity.Entity;
 import org.letscode.shoppingcart.core.utils.PKUtils;
 
 /**
- * Classe que armazena em memória todas as entidades do sistema.
+ * Classe responsável por realizar o mapeamento entre entidades e suas respectivas Stores
  */
 public class EntityRegistry {
     private Map<String, Store<Entity<Object>, Object>> registry;
