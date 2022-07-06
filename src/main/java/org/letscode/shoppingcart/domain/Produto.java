@@ -123,7 +123,7 @@ public class Produto extends Entity<Long> {
         }
 
         public Builder comPeso(Double peso) {
-            this.peso = preco;
+            this.peso = peso;
             return this;
         }
 
