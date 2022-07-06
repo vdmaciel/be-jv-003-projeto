@@ -11,12 +11,17 @@ public class Produto extends Entity<Long> {
 
     private String nome;
 
+    private Double preco;
+
     private Double frete;
 
     private Double taxaAdicional;
 
+    private double desconto = 0.1;
+
     public Produto(Builder builder) {
         this.nome = builder.nome;
+        this.preco = builder.preco;
         this.frete = builder.frete;
         this.taxaAdicional = builder.taxaAdicional;
     }
@@ -41,6 +46,18 @@ public class Produto extends Entity<Long> {
         return taxaAdicional;
     }
 
+    public Double getDesconto() {
+        return desconto;
+    }
+
+    public void setDesconto(Double desconto) {
+        this.desconto = desconto;
+    }
+
+    public Double getPreco() {
+        return preco;
+    }
+
     @Override
     public String toString() {
         return "Produto [frete=" + frete + ", id=" + id + ", nome=" + nome + ", taxaAdicional=" + taxaAdicional + "]";
@@ -49,8 +66,10 @@ public class Produto extends Entity<Long> {
     public static class Builder {
         private String nome;
 
+        private Double preco;
+
         private Double frete;
-    
+
         private Double taxaAdicional;
 
         public Builder() {
@@ -59,6 +78,11 @@ public class Produto extends Entity<Long> {
 
         public Builder comNome(String nome) {
             this.nome = nome;
+            return this;
+        }
+
+        public Builder comPreco(Double preco) {
+            this.preco = preco;
             return this;
         }
 

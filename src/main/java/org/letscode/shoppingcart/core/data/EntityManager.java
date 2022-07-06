@@ -48,7 +48,7 @@ public class EntityManager {
     }
 
     @SuppressWarnings("unchecked")
-    public <T extends Entity<ID>, ID extends Object> List<T> getAll(Class<? extends Entity<ID>> clazz) {
+    public <T extends Entity<ID>, ID> List<T> getAll(Class<? extends Entity<ID>> clazz) {
         return (List<T>) this.registry.getStore(clazz).getAll();
     }
 }
