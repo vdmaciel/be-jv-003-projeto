@@ -59,7 +59,7 @@ public class Store<T extends Entity<ID>, ID extends Object> {
      */
     private List<Field> getEntityFields(Class<?> clazz) {
         List<Field> fields = new ArrayList<>();
-        while(clazz.getDeclaredFields().length > 0) {
+        while(clazz != Object.class) {
             fields.addAll(Arrays.asList(clazz.getDeclaredFields()));
             clazz = clazz.getSuperclass();
         }
