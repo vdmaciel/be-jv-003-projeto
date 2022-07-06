@@ -2,7 +2,6 @@ package org.letscode.shoppingcart.services;
 
 import org.letscode.shoppingcart.domain.Cliente;
 import org.letscode.shoppingcart.domain.ItemCarrinho;
-import org.letscode.shoppingcart.domain.Produto;
 import org.letscode.shoppingcart.repositories.ItemCarrinhoRepository;
 
 import java.util.ArrayList;

@@ -1,11 +1,8 @@
 package org.letscode.shoppingcart.domain;
 
-import org.letscode.shoppingcart.core.annotations.PK;
-
 import java.util.Objects;
 
 public class PessoaFisica extends Cliente {
-    @PK
     private String cpf;
 
     public String getCpf() {

@@ -1,11 +1,8 @@
 package org.letscode.shoppingcart.domain;
 
-import org.letscode.shoppingcart.core.annotations.PK;
-
 import java.util.Objects;
 
 public class PessoaJuridica extends Cliente {
-    @PK
     private String cnpj;
 
     public String getCnpj() {
