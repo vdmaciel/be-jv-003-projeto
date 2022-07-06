@@ -4,6 +4,8 @@ import org.letscode.shoppingcart.core.annotations.AutoIncrement;
 import org.letscode.shoppingcart.core.annotations.PK;
 import org.letscode.shoppingcart.core.entity.Entity;
 
+import java.util.Objects;
+
 public class Produto extends Entity<Long> {
     @PK
     @AutoIncrement
@@ -56,6 +58,14 @@ public class Produto extends Entity<Long> {
 
     public Double getPreco() {
         return preco;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Produto produto = (Produto) o;
+        return Objects.equals(id, produto.id);
     }
 
     @Override
