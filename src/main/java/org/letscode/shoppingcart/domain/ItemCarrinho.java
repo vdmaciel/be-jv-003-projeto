@@ -4,6 +4,8 @@ import org.letscode.shoppingcart.core.annotations.AutoIncrement;
 import org.letscode.shoppingcart.core.annotations.PK;
 import org.letscode.shoppingcart.core.entity.Entity;
 
+import java.math.BigDecimal;
+
 public class ItemCarrinho extends Entity<Long> {
 
     @PK
@@ -33,5 +35,9 @@ public class ItemCarrinho extends Entity<Long> {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public BigDecimal valorTotal(){
+        return produto.getPreco().multiply(new BigDecimal(amount));
     }
 }

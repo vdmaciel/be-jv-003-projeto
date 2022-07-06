@@ -3,12 +3,13 @@ package org.letscode.shoppingcart.services;
 import org.letscode.shoppingcart.domain.Cliente;
 import org.letscode.shoppingcart.domain.ItemCarrinho;
 import org.letscode.shoppingcart.domain.Produto;
+import org.letscode.shoppingcart.repositories.ItemCarrinhoRepository;
 
 import java.util.List;
 
-public class AdicionarItemCarrinho extends NovoItemCarrinho {
+public class AdicionarItemCarrinho {
 
-    public static void adicionarItemCarrinho(Cliente clt, Produto pdt, int qtd) {
+    public static void add(Cliente clt, Produto pdt, int qtd) {
         List<ItemCarrinho> carrinho = CarrinhoDoCliente.carrinhoDoCliente(clt);
 
         boolean alreadyExists = false;
@@ -20,8 +21,16 @@ public class AdicionarItemCarrinho extends NovoItemCarrinho {
         }
 
         if (!alreadyExists) {
-            NovoItemCarrinho.novoItemCarrinho(clt, pdt, qtd);
+            novo(clt, pdt, qtd);
         }
 
+    }
+
+    public static void novo(Cliente clt, Produto pdt, int qtd) {
+        ItemCarrinhoRepository db = ItemCarrinhoRepository.getInstance();
+
+        ItemCarrinho item = new ItemCarrinho(clt, pdt, qtd);
+
+        db.save(item);
     }
 }
