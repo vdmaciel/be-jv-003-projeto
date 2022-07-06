@@ -19,6 +19,14 @@ public class Produto extends Entity<Long> {
 
     private Double taxaAdicional;
 
+    private Double peso;
+
+    public enum Categoria {
+        DIGITAL, MEDICAMENTO, LIMPEZA, ALIMENTO, VESTUARIO
+    }
+
+    private Categoria categoria;
+
     private double desconto = 0.1;
 
     public Produto(Builder builder) {
@@ -26,6 +34,8 @@ public class Produto extends Entity<Long> {
         this.preco = builder.preco;
         this.frete = builder.frete;
         this.taxaAdicional = builder.taxaAdicional;
+        this.peso = builder.peso;
+        this.categoria = builder.categoria;
     }
 
     public Long getId() {
@@ -60,6 +70,14 @@ public class Produto extends Entity<Long> {
         return preco;
     }
 
+    public Double getPeso() {
+        return peso;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -70,7 +88,8 @@ public class Produto extends Entity<Long> {
 
     @Override
     public String toString() {
-        return "Produto [frete=" + frete + ", id=" + id + ", nome=" + nome + ", taxaAdicional=" + taxaAdicional + "]";
+        return "Produto [frete=" + frete + ", id=" + id + ", nome=" + nome + ", taxaAdicional=" + taxaAdicional
+                + ", peso=" + peso + ", categoria=" + categoria +"]";
     }
 
     public static class Builder {
@@ -81,6 +100,10 @@ public class Produto extends Entity<Long> {
         private Double frete;
 
         private Double taxaAdicional;
+
+        private Double peso;
+
+        private Categoria categoria;
 
         public Builder() {
 
@@ -103,6 +126,16 @@ public class Produto extends Entity<Long> {
 
         public Builder comTaxaAdicional(Double taxa) {
             this.taxaAdicional = taxa;
+            return this;
+        }
+
+        public Builder comPeso(Double peso) {
+            this.peso = preco;
+            return this;
+        }
+
+        public Builder comCategoria(Categoria categoria) {
+            this.categoria = categoria;
             return this;
         }
 
