@@ -4,6 +4,7 @@ import org.letscode.shoppingcart.core.annotations.AutoIncrement;
 import org.letscode.shoppingcart.core.annotations.PK;
 import org.letscode.shoppingcart.core.entity.Entity;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Produto extends Entity<Long> {
@@ -13,13 +14,11 @@ public class Produto extends Entity<Long> {
 
     private String nome;
 
-    private Double preco;
+    private BigDecimal preco;
 
     private Double frete;
 
     private Double taxaAdicional;
-
-    private double desconto = 0.1;
 
     public Produto(Builder builder) {
         this.nome = builder.nome;
@@ -48,15 +47,7 @@ public class Produto extends Entity<Long> {
         return taxaAdicional;
     }
 
-    public Double getDesconto() {
-        return desconto;
-    }
-
-    public void setDesconto(Double desconto) {
-        this.desconto = desconto;
-    }
-
-    public Double getPreco() {
+    public BigDecimal getPreco() {
         return preco;
     }
 
@@ -76,7 +67,7 @@ public class Produto extends Entity<Long> {
     public static class Builder {
         private String nome;
 
-        private Double preco;
+        private BigDecimal preco;
 
         private Double frete;
 
@@ -91,7 +82,7 @@ public class Produto extends Entity<Long> {
             return this;
         }
 
-        public Builder comPreco(Double preco) {
+        public Builder comPreco(BigDecimal preco) {
             this.preco = preco;
             return this;
         }
