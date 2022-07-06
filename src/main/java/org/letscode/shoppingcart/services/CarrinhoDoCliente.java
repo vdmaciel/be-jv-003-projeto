@@ -4,8 +4,8 @@ import org.letscode.shoppingcart.domain.Cliente;
 import org.letscode.shoppingcart.domain.ItemCarrinho;
 import org.letscode.shoppingcart.repositories.ItemCarrinhoRepository;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CarrinhoDoCliente {
 
@@ -13,12 +13,8 @@ public class CarrinhoDoCliente {
         ItemCarrinhoRepository db = ItemCarrinhoRepository.getInstance();
 
         List<ItemCarrinho> all = db.getAll();
-        List<ItemCarrinho> carrinho = new ArrayList<ItemCarrinho>();
+        List<ItemCarrinho> carrinho = all.stream().parallel().filter(item -> item.getCliente().equals(cliente)).collect(Collectors.toList());
 
-        for (ItemCarrinho item: all) {
-            if(item.getCliente().equals(cliente)) carrinho.add(item);
-        }
-
-        return  carrinho;
+        return carrinho;
     }
 }
