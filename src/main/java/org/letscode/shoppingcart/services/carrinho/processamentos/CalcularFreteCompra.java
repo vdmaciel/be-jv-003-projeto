@@ -1,18 +1,14 @@
-package org.letscode.shoppingcart.services;
+package org.letscode.shoppingcart.services.carrinho.processamentos;
 
-import org.letscode.shoppingcart.domain.Cliente;
 import org.letscode.shoppingcart.domain.ItemCarrinho;
 import org.letscode.shoppingcart.domain.Produto;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-public class CalculaFreteCompra {
+public class CalcularFreteCompra implements ProcessarCarrinho {
 
-    public static BigDecimal calculaFreteCompra(Cliente cliente) {
-
-        List<ItemCarrinho> carrinho = CarrinhoDoCliente.carrinhoDoCliente(cliente);
-
+    public void processar(List<ItemCarrinho> carrinho) {
         double pesoTotal = 0.0;
 
         for (ItemCarrinho item: carrinho) {
@@ -30,6 +26,8 @@ public class CalculaFreteCompra {
         }else{
             freteTotal = new BigDecimal(30 + pesoTotal * 0.5);
         }
-        return freteTotal;
+        
+        
+        System.out.println("Frete total: " + freteTotal.toString());
     }
 }

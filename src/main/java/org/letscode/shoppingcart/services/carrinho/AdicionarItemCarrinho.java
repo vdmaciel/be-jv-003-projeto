@@ -1,4 +1,4 @@
-package org.letscode.shoppingcart.services;
+package org.letscode.shoppingcart.services.carrinho;
 
 import org.letscode.shoppingcart.domain.Cliente;
 import org.letscode.shoppingcart.domain.ItemCarrinho;
