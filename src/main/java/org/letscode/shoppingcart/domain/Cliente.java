@@ -4,6 +4,8 @@ import org.letscode.shoppingcart.core.annotations.AutoIncrement;
 import org.letscode.shoppingcart.core.annotations.PK;
 import org.letscode.shoppingcart.core.entity.Entity;
 
+import java.io.Serializable;
+
 public abstract class Cliente extends Entity<String> {
     @PK
     @AutoIncrement

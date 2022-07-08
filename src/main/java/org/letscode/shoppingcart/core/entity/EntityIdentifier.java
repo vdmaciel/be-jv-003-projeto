@@ -1,5 +1,6 @@
 package org.letscode.shoppingcart.core.entity;
 
+import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -8,7 +9,7 @@ import java.security.NoSuchAlgorithmException;
  * Classe que representa uma identificador de entidade.
  * @param <T> tipo de identificador
  */
-public class EntityIdentifier<ID extends Object> {
+public class EntityIdentifier<ID extends Object> implements Serializable{
     private String value;
 
     public EntityIdentifier(ID value) {

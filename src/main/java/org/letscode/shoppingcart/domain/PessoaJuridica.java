@@ -1,5 +1,6 @@
 package org.letscode.shoppingcart.domain;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 public class PessoaJuridica extends Cliente {

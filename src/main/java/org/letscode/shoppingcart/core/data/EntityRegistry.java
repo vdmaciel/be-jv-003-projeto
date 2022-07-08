@@ -16,6 +16,9 @@ public class EntityRegistry {
         this.registry = registry;
     }
 
+    public Map<String, Store<Entity<Object>, Object>> getStores(){
+        return registry;
+    }
     /**
      * Retorna o armazenamento de uma única entidade.
      * 
