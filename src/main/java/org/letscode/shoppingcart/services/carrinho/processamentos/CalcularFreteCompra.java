@@ -26,8 +26,7 @@ public class CalcularFreteCompra implements ProcessarCarrinho {
         }else{
             freteTotal = new BigDecimal(30 + pesoTotal * 0.5);
         }
-        
-        
+
         System.out.println("Frete total: " + freteTotal.toString());
     }
 }
