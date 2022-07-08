@@ -4,6 +4,7 @@ import org.letscode.shoppingcart.core.annotations.AutoIncrement;
 import org.letscode.shoppingcart.core.annotations.PK;
 import org.letscode.shoppingcart.core.entity.Entity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 

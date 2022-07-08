@@ -1,5 +1,6 @@
 package org.letscode.shoppingcart.core.data;
 
+import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,13 +18,17 @@ import org.letscode.shoppingcart.core.entity.EntityIdentifier;
  * @param <T> tipo da entidade
  * @param <ID> tipo do identificador da entidade
  */
-public class Store<T extends Entity<ID>, ID extends Object> {
+public class Store<T extends Entity<ID>, ID extends Object> implements Serializable {
     private Map<String, T> data;
     private Integer sequence;
 
     public Store(Map<String, T> data, Integer sequence) {
         this.data = data;
         this.sequence = sequence;
+    }
+
+    public Map<String, T> getData(){
+        return data;
     }
 
     /**
