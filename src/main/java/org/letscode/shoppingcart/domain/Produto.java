@@ -29,7 +29,7 @@ public class Produto extends Entity<Long> {
 
     private Categoria categoria;
 
-    private double desconto = 0.1;
+    private BigDecimal desconto;
 
     public Produto(Builder builder) {
         this.nome = builder.nome;
@@ -38,6 +38,7 @@ public class Produto extends Entity<Long> {
         this.taxaAdicional = builder.taxaAdicional;
         this.peso = builder.peso;
         this.categoria = builder.categoria;
+        this.desconto = builder.desconto;
     }
 
     public Long getId() {
@@ -72,6 +73,11 @@ public class Produto extends Entity<Long> {
         return categoria;
     }
 
+    public BigDecimal getDesconto() {return desconto;}
+
+    public void setDesconto(BigDecimal desconto) { this.desconto = desconto; }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -83,7 +89,7 @@ public class Produto extends Entity<Long> {
     @Override
     public String toString() {
         return "Produto [frete=" + frete + ", id=" + id + ", nome=" + nome + ", taxaAdicional=" + taxaAdicional
-                + ", peso=" + peso + ", categoria=" + categoria +"]";
+                + ", peso=" + peso + ", categoria=" + categoria + ", desconto: " + desconto + "]";
     }
 
     public static class Builder {
@@ -98,6 +104,8 @@ public class Produto extends Entity<Long> {
         private Double peso;
 
         private Categoria categoria;
+
+        private BigDecimal desconto;
 
         public Builder() {
 
@@ -130,6 +138,11 @@ public class Produto extends Entity<Long> {
 
         public Builder comCategoria(Categoria categoria) {
             this.categoria = categoria;
+            return this;
+        }
+
+        public Builder comDesconto(BigDecimal desconto){
+            this.desconto = desconto;
             return this;
         }
 
